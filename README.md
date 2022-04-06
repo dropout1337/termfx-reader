@@ -35,6 +35,11 @@
 
 ---------------------------------------
 
+### Installation
+* `pip install -U git+https://github.com/dropout1337/termfx-reader`
+
+---------------------------------------
+
 ### Creators
 * [Dropout](https://t.me/dropoutuwu)<br>
 * [Null](https://t.me/epiknull) (Helped with a lot of the function parsing.)<br>
