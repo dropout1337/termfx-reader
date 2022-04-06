@@ -41,7 +41,7 @@
 ---------------------------------------
 
 ### Usage
-* ```py
+```py
 import termfx
 
 registry = termfx.New()
