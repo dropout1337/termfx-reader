@@ -10,15 +10,15 @@ class New():
 
         self.split = { "start": "<<", "end": ">>" } if split is None else split
 
-    def register_variable(self, name: str, value: str):
-        if name in self.variables.keys():
-            raise RegisteredVariable("A variable with the name %s already exists." % (name))
+    def register_variable(self, name: str, value: str, overwrite=False):
+        if name in self.variables.keys() and not overwrite:
+            raise RegisteredVariable(f"A variable with the name {name} already exists.")
 
         self.variables[name] = value
 
-    def register_function(self, name: str, func: any):
-        if name in self.functions.keys():
-            raise RegisteredFunction("A function with the name %s already exists." % (name))
+    def register_function(self, name: str, func: any, overwrite=False):
+        if name in self.functions.keys() and not overwrite:
+            raise RegisteredFunction(f"A function with the name {name} already exists.")
 
         self.functions[name] = func
     
@@ -45,8 +45,8 @@ class New():
                 func = self.functions.get(value.split("(")[0])
 
                 if func is None:
-                    raise RegisteredFunction("%s is not a registered function." % (value.split("(")[0]))
-                elif len(arglist) == 1 and arglist[0] == "":
+                    raise RegisteredFunction(f"{value.split('(')[0]} is not a registered function.")
+                elif len(arglist) <= 1 and arglist[0] is "":
                     func_output = func()
                     output = output.replace(line, "" if func_output is None else str(func_output))
                     continue
@@ -58,7 +58,7 @@ class New():
                 name = self.variables.get(value.replace("$",""))
 
                 if name is None:
-                    raise RegisteredVariable("%s is not a registered variable." % (value.replace("$","")))
+                    raise RegisteredVariable(f"{value.replace('$','')} is not a registered variable.")
 
                 output = output.replace(line, str(name))
         
