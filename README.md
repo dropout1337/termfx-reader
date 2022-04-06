@@ -40,6 +40,18 @@
 
 ---------------------------------------
 
+### Usage
+* ```py
+import termfx
+
+registry = termfx.New()
+registry.register_variable("username", "root")
+
+registry.execute("hello <<$username>>")
+```
+
+---------------------------------------
+
 ### Creators
 * [Dropout](https://t.me/dropoutuwu)<br>
 * [Null](https://t.me/epiknull) (Helped with a lot of the function parsing.)<br>
