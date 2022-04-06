@@ -54,4 +54,4 @@ registry.execute("hello <<$username>>")
 
 ### Creators
 * [Dropout](https://t.me/dropoutuwu)<br>
-* [Null](https://t.me/epiknull) (Helped with a lot of the function parsing.)<br>
+* [Null](https://t.me/epiknull) (Huge thanks to this man, helped a lot overall.)<br>
