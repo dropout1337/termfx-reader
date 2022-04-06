@@ -1,0 +1,3 @@
+welcome <<$username>>
+<<sleep(1)>>
+I just slept for 1 second to waste your time :)
